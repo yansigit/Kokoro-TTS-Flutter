@@ -15,7 +15,7 @@ dependencies:
   path: ^1.8.3
   path_provider: ^2.1.1
   malsami: ^0.0.2
-  flutter_onnxruntime: ^1.4.0  # For ONNX model inference
+  flutter_onnxruntime: ^1.4.3  # For ONNX model inference
   just_audio: ^0.10.3     # For audio playback
   http: ^1.1.0            # For downloading model files
   collection: ^1.18.0
