@@ -1,8 +1,10 @@
 name: kokoro_tts_flutter
-description: A Flutter implementation of Kokoro-TTS using ONNX Runtime
-version: 0.2.0+1
-homepage: https://github.com/yansigit
-repository: https://github.com/yansigit/kokoro_tts_flutter
+description: A Flutter implementation of Kokoro-TTS using ONNX Runtime for high-quality multi-language text-to-speech synthesis.
+version: 0.2.1-exp
+homepage: https://github.com/yansigit/Kokoro-TTS-Flutter
+repository: https://github.com/yansigit/Kokoro-TTS-Flutter
+issue_tracker: https://github.com/yansigit/Kokoro-TTS-Flutter/issues
+documentation: https://github.com/yansigit/Kokoro-TTS-Flutter#readme
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

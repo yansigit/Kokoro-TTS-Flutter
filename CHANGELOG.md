@@ -14,3 +14,10 @@
 
 ## 0.2.0
 - Add int8 model support
+
+## 0.2.1-exp
+- Fix int8 model casting error (GitHub issue #8)
+- Always return float32 audio samples for proper audio processing
+- Improve macOS compatibility with deployment target 14.0
+- Add comprehensive test coverage for int8 functionality
+- Clean up unnecessary imports and improve code quality

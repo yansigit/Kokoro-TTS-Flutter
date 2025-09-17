@@ -12,7 +12,7 @@ Kokoro TTS Flutter is a text-to-speech (TTS) library for Flutter, powered by ONN
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  kokoro_tts_flutter: ^0.1.0
+  kokoro_tts_flutter: ^0.2.1-exp
 ```
 
 ## Model Files Required
