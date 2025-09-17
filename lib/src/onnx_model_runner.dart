@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_onnxruntime/flutter_onnxruntime.dart';
@@ -159,23 +158,17 @@ class OnnxModelRunner {
 
       // Get the data as a list and convert to doubles
       final List<dynamic> rawList = await outputValue.asList();
-      if (isInt8) {
-        final List<int> outputList =
-            rawList.map((value) => value as int).toList();
-        final outputData = Int8List.fromList(outputList);
-        debugPrint(
-            'Dart: Raw ONNX Output (int8) (first 10): ${outputData.sublist(0, outputData.length > 10 ? 10 : outputData.length)}');
-        return outputData;
-      } else {
-        final List<double> outputList =
-            rawList.map((value) => value as double).toList();
+      
+      // Always return float audio samples for audio processing
+      // The isInt8 flag just indicates the model is quantized internally
+      final List<double> outputList =
+          rawList.map((value) => value as double).toList();
 
-        // Convert the list to Float32List for audio processing
-        final outputData = Float32List.fromList(outputList);
-        debugPrint(
-            'Dart: Raw ONNX Output (float32) (first 10): ${outputData.sublist(0, outputData.length > 10 ? 10 : outputData.length)}');
-        return outputData;
-      }
+      // Convert the list to Float32List for audio processing
+      final outputData = Float32List.fromList(outputList);
+      debugPrint(
+          'Dart: Raw ONNX Output (float32) (first 10): ${outputData.sublist(0, outputData.length > 10 ? 10 : outputData.length)}');
+      return outputData;
     } catch (e) {
       throw Exception('Failed to run inference: $e');
     }
